@@ -35,4 +35,13 @@ var contain.fn = function() {
 > 闭包就是由函数创造的一个词法作用域，里面创建的变量被引用后，可以在这个词法环境之外自由使用。闭包通常用来创建内部变量，使得这些变量不能被外部随意修改，同时又可以通过指定的函数接口来操作
 > http://blog.csdn.net/sunlylorn/article/details/6534610
 
+4、 h5新标签
+
+> http://www.jianshu.com/p/b4393e798737
+
+5、 ajax同步和异步的处理
+
+> AJAX中根据async的值不同分为同步（async = false）和异步（async = true）两种执行方式
+> $.ajax()的async参数总是设置成true，这标志着在请求开始后，其他代码依然能够执行
+
 
