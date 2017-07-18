@@ -44,4 +44,17 @@ var contain.fn = function() {
 > AJAX中根据async的值不同分为同步（async = false）和异步（async = true）两种执行方式
 > $.ajax()的async参数总是设置成true，这标志着在请求开始后，其他代码依然能够执行
 
+6、 了解nodejs吗？
+7、 设计一个可复用的button组件
 
+8、 react 无状态组件
+9、 js 取并集
+10、 纯css实现三角形
+11、 react 生命周期， componentWillMount的意思， 哪个生命周期调用ajax
+12、 ios微信端滑动缓慢
+13、 手机端设置不能放大
+14、 localstroge存储和取值
+15、 canvas绘制长方形
+16、 react classComponent 和 function componenet的区别
+17、 echarts环形双层图
+18、 
