@@ -48,16 +48,16 @@ var contain.fn = function() {
 7、 设计一个可复用的button组件
 
 8、 react 无状态组件
-    无状态组件就剩了一个 render 方法，因此也就没有没法实现组件的生命周期方法，例如 componentDidMount, componentWillUnmount 等。
-- 优点
 
-相比于 class 创建组件
+> 无状态组件就剩了一个 render 方法，因此也就没有没法实现组件的生命周期方法，例如 componentDidMount, componentWillUnmount 等。
+*优点（相比于 class 创建组件）*
+
 
 - 语法更简洁
 占内存更小（class 有 props context _context 等诸多属性），首次 render 的性能更好
-. 可以写成无副作用的纯函数
+- 可以写成无副作用的纯函数
 可拓展性更强（函数的 compose，currying 等组合方式，比 class 的 extend/inherit 更灵活）
-- 缺点
+*缺点*
 
 - 无生命周期函数
 
@@ -87,11 +87,110 @@ const ReactFormLabel = (props) =>
 ```
 9、 js 取并集
 10、 纯css实现三角形
+*把上、左、右三条边隐藏掉（颜色设为 transparent）*
+```
+#demo {   width: 0;   height: 0;   border-width: 20px;   border-style: solid;   border-color: transparent transparent red transparent; } 
+```
+*利用transform属性*
+HTML：
+```
+<div class="message-box">
+  <span>我是利用 css transfrom 属性字符实现的</span>
+  <div class="triangle-css3 transform ie-transform-filter"></div>
+</div>
+```
+CSS：
+```
+.message-box {
+    position:relative;
+    width:240px;
+    height:60px;
+    line-height:60px;
+    background:#E9FBE4;
+    box-shadow:1px 2px 3px #E9FBE4;
+    border:1px solid #C9E9C0;
+    border-radius:4px;
+    text-align:center;
+    color:#0C7823;
+}
+.triangle-css3 {
+    position:absolute;
+    bottom:-8px;
+    bottom:-6px;
+    left:30px;
+    overflow:hidden;
+    width:13px;
+    height:13px;
+    background:#E9FBE4;
+    border-bottom:1px solid #C9E9C0;
+    border-right:1px solid #C9E9C0;
+}
+.transform {
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+/*ie7-9*/
+.ie-transform-filter {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(
+        M11=0.7071067811865475,
+        M12=-0.7071067811865477,
+        M21=0.7071067811865477,
+        M22=0.7071067811865475,
+    SizingMethod='auto expand')";
+    filter: progid:DXImageTransform.Microsoft.Matrix(
+        M11=0.7071067811865475,
+        M12=-0.7071067811865477,
+        M21=0.7071067811865477,
+        M22=0.7071067811865475,
+    SizingMethod='auto expand');
+}
+```
 11、 react 生命周期， componentWillMount的意思， 哪个生命周期调用ajax
-12、 ios微信端滑动缓慢
-13、 手机端设置不能放大
+12、 ios手机端滑动缓慢
+
+在移动端html中经常出现横向/纵向滚动的效果,但是在iPhone中滚动速度很慢,感觉不流畅,有种卡卡的感觉,但是在安卓设备上没有这种感觉;
+
+```
+-webkit-overflow-scrolling : touch;
+```
+13、 手机端禁止缩放
+```
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+```
+
 14、 localstroge存储和取值
+```
+localStorage.setItem('myCat', 'Tom');
+localStorage.removeItem('myCat');
+```
 15、 canvas绘制长方形
+```
+//得到画布上下文，上节已讲，在此不多说
+function draw() {
+canvas = document.getElementById("canvas");
+if (canvas.getContext) { //检测浏览器是否兼容
+ctx = canvas.getContext("2d"); //你的canvas代码在这里
+return ctx;
+}
+return null;
+}
+
+//画矩形
+
+function juXing() {
+var canvas = draw();//获得2d绘图上下文共有方法
+canvas.fillStyle = "#2E81CE"; //等同于fillStyle="rgba(46,129,206,1)";
+canvas.strokeStyle = "red";
+canvas.lineWidth = 2;
+canvas.fillRect(10, 10, 100, 120); //填充的四个参数(x,y,width,height)
+canvas.strokeRect(10, 10, 100, 120); //线的四个参数(x,y,width,height)
+}
+```
 16、 react classComponent 和 function componenet的区别
+
+React Component 有 3 种定义方式，分别是 React.createClass, class 和 Stateless Functional Component。
+Stateless Functional Component无this变量， 无生命周期方法
 17、 echarts环形双层图
 18、 
