@@ -49,24 +49,24 @@ var contain.fn = function() {
 
 8、 react 无状态组件
     无状态组件就剩了一个 render 方法，因此也就没有没法实现组件的生命周期方法，例如 componentDidMount, componentWillUnmount 等。
-优点
+- 优点
 
 相比于 class 创建组件
 
-. 语法更简洁
+- 语法更简洁
 占内存更小（class 有 props context _context 等诸多属性），首次 render 的性能更好
 . 可以写成无副作用的纯函数
 可拓展性更强（函数的 compose，currying 等组合方式，比 class 的 extend/inherit 更灵活）
-缺点
+- 缺点
 
-. 无生命周期函数
+- 无生命周期函数
 
 一个组件就是一个函数，函数应该是谈不上生命周期的，但是组件却是有生命周期，stateless functions 没有生命周期。当然了，我们其实可以使用 高阶组件 去实现生命周期
 
-. 没有 this
+- 没有 this
 
 在 stateless functions 中，this 是 undefined，所以是不能使用 this 变量。不过换个角度思考，this 是在运行时随时可以被修改或重新赋值，跟外界环境有着密切的联系，正是不使用this才会让组件变得更纯。
-例子1：
+例子：
 改写前：
 ```
 class ReactFormLabel extends React.Component {
