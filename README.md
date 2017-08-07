@@ -192,5 +192,40 @@ canvas.strokeRect(10, 10, 100, 120); //线的四个参数(x,y,width,height)
 
 React Component 有 3 种定义方式，分别是 React.createClass, class 和 Stateless Functional Component。
 Stateless Functional Component无this变量， 无生命周期方法
+
 17、 echarts环形双层图
-18、 
+18、 js创建一个对象做了哪些操作
+19、 js创建一个对象的方式
+     Object模式、工厂模式、构造函数模式、原型模式
+20、 js继承的方式
+     原型链继承， 原型继承、拷贝继承（深拷贝（jquery的继承方式）、浅拷贝（早起jQuery的继承方式））
+21、 svg和jpg运用的区别
+
+---------------------------------------
+2017-08-02
+
+1、 css 实现子块水平垂直居中， 分子块已知宽高和子块未知宽高两种
+    > 固定宽高：
+```
+
+      * position: absolute,left: 50%,width:100px;margin-left: -50px;
+      * flex
+
+```
+    > 不固定宽高： 
+
+2、 实现多语言切换
+3、 let const 和 var 的区别
+4、 css 实现动画移动
+5、 js 实现冒泡排序
+6、 js 实现任意字符串判断是否为ipv4地址
+7、 react 生命周期
+8、 以下代码是否会报错，为什么
+```
+const a = { name: 1 };
+a.name = 2;
+console.log(a.name);
+ ```
+9、 html中src和href的区别
+10、 jQuery的expend函数
+11、 echarts实现柱状图堆叠（思路）
