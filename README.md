@@ -230,7 +230,8 @@ Person.prototype.say = function() {
 Person.prototype.friends = ['lilei'];
 var person1 = new Person();
 ```
-及以上的组合模式
+及以上的组合模式。
+
 20、 js继承的方式
      
 原型链继承，
@@ -257,7 +258,7 @@ Cat.prototype = new Animal();
 　　var cat1 = new Cat("大毛","黄色");
 　　alert(cat1.species); // 动物
 ```
- 拷贝继承（深拷贝（jquery的继承方式）、浅拷贝（早期jQuery的继承方式））
+ 拷贝继承（深拷贝（jquery的继承方式）、浅拷贝（早期jQuery的继承方式））。
 21、 svg和jpg运用的区别
 
 ---------------------------------------
