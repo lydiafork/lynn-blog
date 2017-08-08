@@ -217,6 +217,35 @@ Stateless Functional Component无this变量， 无生命周期方法
 2、 实现多语言切换
 3、 let const 和 var 的区别
 4、 css 实现动画移动
+```
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:mymove 5s infinite;
+-webkit-animation:mymove 5s infinite; /*Safari and Chrome*/
+}
+
+@keyframes mymove
+{
+0% {left:0px; top: 0;}
+25% {left:200px; top: 0;}
+50% {left:200px; top: 200px;}
+75% {left:0px; top: 200px;}
+100% {left:0; top: 0;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+0% {left:0px; top: 0;}
+25% {left:200px; top: 0;}
+50% {left:200px; top: 200px;}
+75% {left:0px; top: 200px;}
+100% {left:0; top: 0;}
+}
+```
 5、 js 实现冒泡排序
 6、 js 实现任意字符串判断是否为ipv4地址
 7、 react 生命周期
@@ -229,3 +258,105 @@ console.log(a.name);
 9、 html中src和href的区别
 10、 jQuery的expend函数
 11、 echarts实现柱状图堆叠（思路）
+12、 
+ ```
+var a = [];
+for (var i = 0; i < 10; i++) {
+  a[i] = function () {
+    console.log(i);
+  };
+}
+a[6](); 
+
+
+var a = [];
+for (var i = 0; i < 10; i++) {
+  a[i] = function () {
+    console.log(i);
+  };
+}
+a[6](); 
+
+ ```
+上述两段代码的输出结果分别是？为什么 ？
+10 6
+
+13、 js 冒泡事件和捕获事件的区别
+   捕获事件从上到下， 冒泡事件从下到上
+14、 react 受控组件和非受控组件
+
+受控组件（Controlled Component）代指那些交由 React 控制并且所有的表单数据统一存放的组件。譬如下面这段代码中 username 变量值并没有存放到 DOM 元素中，而是存放在组件状态数据中。任何时候我们需要改变 username 变量值时，我们应当利用 onChange 事件去调用 setState() 函数进行修改。
+ ```
+class ControlledForm extends Component {
+  state = {
+    username: ''
+  }
+  updateUsername = (e) => {
+    this.setState({
+      username: e.target.value,
+    })
+  }
+  handleSubmit = () => {
+    console.log("Input Value: ", this.state.username);
+  }
+  render () {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input
+     	  type='text'
+          value={this.state.username}
+          onChange={this.updateUsername} 
+        />
+        <button type='submit'>Submit</button>
+      </form>
+    )
+  }
+}
+ ```
+而非受控组件（Uncontrolled Component）则是由 DOM 存放表单数据，并非存放在 React 组件中。我们可以使用 refs 来操控DOM元素，或者通过 id 来获取表单值
+ ```
+class UnControlledForm extends Component {
+  handleSubmit = () => {
+    console.log("Input Value: ", this.input.value)
+  }
+  render () {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input
+          type='text'
+          ref={(input) => this.input = input} 
+        />
+        <button type='submit'>Submit</button>
+      </form>
+    )
+  }
+}
+ ```
+
+
+15、 js继承的方式
+16、 js 发起一个ajax
+ ```
+var xhr = new XMLHttpRequest();
+xhr.open('PUT', 'myservice/user/1234');
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.onload = function() {
+    if (xhr.status === 200) {
+        var userInfo = JSON.parse(xhr.responseText);
+    }
+};
+xhr.send(JSON.stringify({
+    name: 'John Smith',
+    age: 34
+}));
+ ```
+(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象 (2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息 (3)设置响应HTTP请求状态变化的函数 (4)发送HTTP请求 (5)获取异步调用返回的数据 (6)使用JavaScript和DOM实现局部刷新 
+17、 原型链继承的时候call 和 bind 和 apply的区别
+call和apply都是对函数的直接调用，而bind方法返回的仍然是一个函数
+call 和 apply 是为了动态改变 this 而出现的，对于 apply、call 二者而言，作用完全一样，只是接受参数的方式不太一样
+18、 react在哪个生命周期发起ajax请求
+> 我们应当将AJAX 请求放到 componentDidMount 函数中执行，主要原因有下：
+> React 下一代调和算法 Fiber 会通过开始或停止渲染的方式优化应用性能，其会影响到 componentWillMount 的触发次数。对于 componentWillMount 这个生命周期函数的调用次数会变得不确定，React 可能会多次频繁调用 componentWillMount。如果我们将 AJAX 请求放到 componentWillMount 函数中，那么显而易见其会被触发多次，自然也就不是好的选择。
+> 如果我们将 AJAX 请求放置在生命周期的其他函数中，我们并不能保证请求仅在组件挂载完毕后才会要求响应。如果我们的数据请求在组件挂载之前就完成，并且调用了 setState() 函数将数据添加到组件状态中，对于未挂载的组件则会报错。而在 componentDidMount 函数中进行 AJAX 请求则能有效避免这个问题。
+19、 js事件委托
+
