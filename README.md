@@ -196,9 +196,68 @@ Stateless Functional Component无this变量， 无生命周期方法
 17、 echarts环形双层图
 18、 js创建一个对象做了哪些操作
 19、 js创建一个对象的方式
-     Object模式、工厂模式、构造函数模式、原型模式
+     Object模式、
+工厂模式、
+```
+function Person() {
+  var o = new Object();
+  o.name = 'hanmeimei';
+  o.say = function() {
+    alert(this.name);
+  }
+  return o;
+}
+var person1 = Person();
+```
+构造函数模式
+```
+function Person() {
+  this.name = 'hanmeimei';
+  this.say = function() {
+    alert(this.name)
+  }
+}
+
+var person1 = new Person();
+```
+原型模式
+```
+function Person() {}
+Person.prototype.name = 'hanmeimei';
+Person.prototype.say = function() {
+  alert(this.name);
+}
+Person.prototype.friends = ['lilei'];
+var person1 = new Person();
+```
+及以上的组合模式
 20、 js继承的方式
-     原型链继承， 原型继承、拷贝继承（深拷贝（jquery的继承方式）、浅拷贝（早起jQuery的继承方式））
+     
+原型链继承，
+```
+function Animal(){
+　　　　this.species = "动物";
+　　}
+function Cat(name,color){
+　　　　this.name = name;
+　　　　this.color = color;
+　　}
+Cat.prototype = new Animal();
+　　Cat.prototype.constructor = Cat;
+　　var cat1 = new Cat("大毛","黄色");
+　　alert(cat1.species); // 动物
+```
+构造函数继承
+```
+　　function Cat(name,color){
+　　　　Animal.apply(this, arguments);
+　　　　this.name = name;
+　　　　this.color = color;
+　　}
+　　var cat1 = new Cat("大毛","黄色");
+　　alert(cat1.species); // 动物
+```
+ 拷贝继承（深拷贝（jquery的继承方式）、浅拷贝（早期jQuery的继承方式））
 21、 svg和jpg运用的区别
 
 ---------------------------------------
@@ -212,7 +271,7 @@ Stateless Functional Component无this变量， 无生命周期方法
       * flex
 
 ```
-    > 不固定宽高： 
+
 
 2、 实现多语言切换
 3、 let const 和 var 的区别
@@ -256,6 +315,9 @@ a.name = 2;
 console.log(a.name);
  ```
 9、 html中src和href的区别
+href标识超文本引用，用在link和a等元素上，href是引用和页面关联，是在当前元素和引用资源之间建立联系，src表示引用资源，表示替换当前元素，用在img，script，iframe上.
+
+
 10、 jQuery的expend函数
 11、 echarts实现柱状图堆叠（思路）
 12、 
@@ -350,13 +412,19 @@ xhr.send(JSON.stringify({
     age: 34
 }));
  ```
-(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象 (2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息 (3)设置响应HTTP请求状态变化的函数 (4)发送HTTP请求 (5)获取异步调用返回的数据 (6)使用JavaScript和DOM实现局部刷新 
+> (1)创建XMLHttpRequest对象,也就是创建一个异步调用对象 (2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息 (3)设置响应HTTP请求状态变化的函数 (4)发送HTTP请求 (5)获取异步调用返回的数据 (6)使用JavaScript和DOM实现局部刷新。
+
 17、 原型链继承的时候call 和 bind 和 apply的区别
 call和apply都是对函数的直接调用，而bind方法返回的仍然是一个函数
-call 和 apply 是为了动态改变 this 而出现的，对于 apply、call 二者而言，作用完全一样，只是接受参数的方式不太一样
+call 和 apply 是为了动态改变 this 而出现的，对于 apply、call 二者而言，作用完全一样，只是接受参数的方式不太一样。
+
 18、 react在哪个生命周期发起ajax请求
 > 我们应当将AJAX 请求放到 componentDidMount 函数中执行，主要原因有下：
 > React 下一代调和算法 Fiber 会通过开始或停止渲染的方式优化应用性能，其会影响到 componentWillMount 的触发次数。对于 componentWillMount 这个生命周期函数的调用次数会变得不确定，React 可能会多次频繁调用 componentWillMount。如果我们将 AJAX 请求放到 componentWillMount 函数中，那么显而易见其会被触发多次，自然也就不是好的选择。
 > 如果我们将 AJAX 请求放置在生命周期的其他函数中，我们并不能保证请求仅在组件挂载完毕后才会要求响应。如果我们的数据请求在组件挂载之前就完成，并且调用了 setState() 函数将数据添加到组件状态中，对于未挂载的组件则会报错。而在 componentDidMount 函数中进行 AJAX 请求则能有效避免这个问题。
-19、 js事件委托
 
+
+19、 js事件委托
+20、 fis3 和 webpack 区别
+21、  Jquery中的bind(),live(),delegate(),on()的区别
+http://www.cnblogs.com/moonreplace/archive/2012/10/09/2717136.html
