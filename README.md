@@ -193,9 +193,9 @@ canvas.strokeRect(10, 10, 100, 120); //线的四个参数(x,y,width,height)
 React Component 有 3 种定义方式，分别是 React.createClass, class 和 Stateless Functional Component。
 Stateless Functional Component无this变量， 无生命周期方法
 
-17、 echarts环形双层图
-18、 js创建一个对象做了哪些操作
-19、 js创建一个对象的方式
+17、 echarts环形双层图？
+18、 js创建一个对象做了哪些操作？
+19、 js创建一个对象的方式？
      Object模式、
 工厂模式、
 ```
@@ -309,6 +309,21 @@ animation:mymove 5s infinite;
 5、 js 实现冒泡排序
 6、 js 实现任意字符串判断是否为ipv4地址
 7、 react 生命周期
+getDefaultProps()
+getInitialState()
+componentWillMount()
+render 
+componentDidMount()
+
+存在期
+componentWillReceiveProps()
+shouldComponentUpdate
+componentWillUpdate()
+render()
+componentdidUpdate()
+
+销毁
+componentWillUnmount
 8、 以下代码是否会报错，为什么
 ```
 const a = { name: 1 };
@@ -319,7 +334,8 @@ console.log(a.name);
 href标识超文本引用，用在link和a等元素上，href是引用和页面关联，是在当前元素和引用资源之间建立联系，src表示引用资源，表示替换当前元素，用在img，script，iframe上.
 
 
-10、 jQuery的expend函数
+10、 jQuery的extend函数
+  属性拷贝函数
 11、 echarts实现柱状图堆叠（思路）
 12、 
  ```
@@ -429,3 +445,15 @@ call 和 apply 是为了动态改变 this 而出现的，对于 apply、call 二
 20、 fis3 和 webpack 区别
 21、  Jquery中的bind(),live(),delegate(),on()的区别
 http://www.cnblogs.com/moonreplace/archive/2012/10/09/2717136.html
+---------------------------------------
+2017-08-08
+
+1、 jquery实现图片轮播的原理
+2、 对前端工程师这个岗位怎么看
+3、 用过什么es6语法
+4、 10个div块，jquery实现所有div块变成同一个颜色？ 不同的颜色
+5、 jquery常用的函数
+6、 react native 项目Android和ios端怎么兼容
+7、 为什么用react框架
+8、 一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么
+> 浏览器根据请求的URL交给DNS域名解析，找到真实IP，向服务器发起请求；     服务器交给后台处理完成后返回数据，浏览器接收文件（HTML、JS、CSS、图象等）；     浏览器对加载到的资源（HTML、JS、CSS等）进行语法解析，建立相应的内部数据结构（如HTML的DOM）；     载入解析到的资源文件，渲染页面，完成
