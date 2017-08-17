@@ -31,7 +31,7 @@ var contain.fn = function() {
 
 
 
-    3、 闭包的作用
+3、 闭包的作用
 > 闭包就是由函数创造的一个词法作用域，里面创建的变量被引用后，可以在这个词法环境之外自由使用。闭包通常用来创建内部变量，使得这些变量不能被外部随意修改，同时又可以通过指定的函数接口来操作
 > http://blog.csdn.net/sunlylorn/article/details/6534610
 
@@ -250,6 +250,7 @@ Cat.prototype = new Animal();
 ```
 构造函数继承
 ```
+
 　　function Cat(name,color){
 　　　　Animal.apply(this, arguments);
 　　　　this.name = name;
@@ -257,6 +258,18 @@ Cat.prototype = new Animal();
 　　}
 　　var cat1 = new Cat("大毛","黄色");
 　　alert(cat1.species); // 动物
+```
+原型继承
+```
+function Animal(){}
+Animal.prototype.species = '动物';
+function Cat(name,color){
+　　　　this.name = name;
+　　　　this.color = color;
+　　}
+Cat.prototype = Animal.prototype;
+var cat1 = new Cat("大毛","黄色");
+alert(cat1.species); // 动物
 ```
  拷贝继承（深拷贝（jquery的继承方式）、浅拷贝（早期jQuery的继承方式））。
 21、 svg和jpg运用的区别
@@ -442,6 +455,7 @@ call 和 apply 是为了动态改变 this 而出现的，对于 apply、call 二
 
 
 19、 js事件委托
+行为委托的实质就是将子元素事件的处理委托给父级元素处理
 20、 fis3 和 webpack 区别
 21、  Jquery中的bind(),live(),delegate(),on()的区别
 http://www.cnblogs.com/moonreplace/archive/2012/10/09/2717136.html
@@ -457,3 +471,40 @@ http://www.cnblogs.com/moonreplace/archive/2012/10/09/2717136.html
 7、 为什么用react框架
 8、 一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么
 > 浏览器根据请求的URL交给DNS域名解析，找到真实IP，向服务器发起请求；     服务器交给后台处理完成后返回数据，浏览器接收文件（HTML、JS、CSS、图象等）；     浏览器对加载到的资源（HTML、JS、CSS等）进行语法解析，建立相应的内部数据结构（如HTML的DOM）；     载入解析到的资源文件，渲染页面，完成
+
+---------------------------------------
+
+2017-08-14
+
+1、 HTTP2.0和HTTP1.x的区别？
+   二进制协议； 多工； 数据包不按顺序发送，需做标记；头信息压缩； 允许服务器未经请求，主动向客户端发送资源，这叫做服务器推送
+  http://www.ruanyifeng.com/blog/2016/08/http.html
+
+2、 HTTP协议中etag的作用?
+   实体标签（Entity Tag,ETag）是Web服务器和浏览器用于确认缓存组件的有效性的一种机制
+3、 web性能优化
+   减少http请求；（css雪碧图， 合并脚本和样式表）
+   使用cdn（Content Delivery Network,内容分发网络）
+   添加Expire/Cache-Control 头
+   启用Gzip压缩
+   将css放在页面最上面， js放在页面最下面
+   避免 CSS 表达式
+   把javascript和css都放到外部文件中
+   减少dns请求
+   压缩 JavaScript 和 CSS
+   避免重定向
+   移除重复的脚本
+   配置实体标签
+   使用ajax缓存
+
+---------------------------------------
+2017-08-16
+
+1、 jQuery链式调用
+2、 react native 技术点
+3、 webpack理解
+4、 对Generator函数的理解
+5、 flex理解? flex实现bootstrap的栅格化布局
+6、 函数式编程
+    函数可以作为参赛，需要返回值，函数要独立， 不能修改外部变量的值， 闭包
+
