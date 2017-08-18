@@ -508,3 +508,72 @@ http://www.cnblogs.com/moonreplace/archive/2012/10/09/2717136.html
 6、 函数式编程
     函数可以作为参赛，需要返回值，函数要独立， 不能修改外部变量的值， 闭包
 
+---------------------------------------
+1、 下列代码打印出的结果是
+ ```
+
+function Tree() {}
+Tree.prototype.oneleafmore = function() {
+  this.leaf ++;
+  console.log(this.leaf + 'leaves')
+};
+Tree.prototype.leaf = 0;
+
+const tree1 = new Tree();
+tree1.oneleafmore();
+tree1.oneleafmore();
+
+const tree2 = new Tree();
+tree2.oneleafmore();
+ ```
+2、 实现AppleTree继承Tree();
+ ```
+ function AppleTree() {
+}
+ ```
+
+3、 用户在10s内点击3次， 输出结果是
+ ```
+
+function wait() {
+  const ms = 10000 + new Date().getTime();
+  while (new Date().getTime > ms) {}
+  console.log('wait finshed');
+  
+}
+function handleClick() {
+  console.log('click');
+}
+document.addEventListener('click', handleClick);
+wait();
+console.log('all finished!')
+ ```
+
+4 、下列代码的输出结果
+ ```
+function b() {
+  console.log(myvar2);
+  console.log(myvar3);
+
+}
+function a() {
+  var myvar2 = 2;
+  var myvar3 = 3;
+  b();
+}
+var myvar1 = 1;
+a();
+console.log(myvar2);
+ ```
+
+5、 下列代码的输出结果
+```
+for (var i = 1; i <= 3; i++) {
+    setTimeout(function() {
+        console.log(i);
+    }, 0);
+}
+```
+6、 100000个排序获取最高的10个数
+
+http://www.10tiao.com/html/564/201604/2650207959/2.html
