@@ -26,7 +26,9 @@
 
 ### js
 [es官方文档](https://tc39.es/ecma262/#sec-intro)
-推荐收藏，无需通读，有不明白的地方再查询
+推荐收藏，不用通读，有不明白的地方再查询  
+[ECMAScript 6 入门](https://es6.ruanyifeng.com/#docs/generator)  
+
 
 ### http
 [透视HTTP协议](https://time.geekbang.org/column/intro/189)
@@ -38,3 +40,8 @@
 
 ### css
 
+### 小程序
+[从源码看微信小程序启动过程](https://tech.youzan.com/weapp-booting/)  
+[小程序开发指南](https://developers.weixin.qq.com/ebook?action=get_post_info&volumn=1&lang=zh_CN&book=miniprogram&docid=0000aac998c9b09b00863377251c0a)  
+[小程序底层实现原理及一些思考](https://zhuanlan.zhihu.com/p/81775922)  
+[小程序底层实现原理及一些思考（2）](https://zhuanlan.zhihu.com/p/121815358)  
