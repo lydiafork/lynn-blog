@@ -27,8 +27,9 @@
 ### js
 [es官方文档](https://tc39.es/ecma262/#sec-intro)
 推荐收藏，不用通读，有不明白的地方再查询  
-[ECMAScript 6 入门](https://es6.ruanyifeng.com/#docs/generator)  
-
+[V8垃圾回收原来这么简单？](https://zhuanlan.zhihu.com/p/146749402)  
+[深入理解ES6](https://book.douban.com/subject/27072230/) 可读性更高  
+[ECMAScript 6 入门](https://es6.ruanyifeng.com/#docs/generator) 篇幅较长，建议当工具手册    
 
 ### http
 [透视HTTP协议](https://time.geekbang.org/column/intro/189)
